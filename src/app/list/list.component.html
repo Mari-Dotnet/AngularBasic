@@ -1,0 +1,14 @@
+<h5>List Component</h5>
+@if(cars.length>0){
+    <ul>
+        @for (item of cars; track $index) {
+            <li>{{item}}</li>
+        }
+    </ul>
+}
+@else {
+    <div>No data available</div>
+}
+<br><br>
+<app-form (carAdded)="Cardataupdated($event)"></app-form>
+

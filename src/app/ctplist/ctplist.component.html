@@ -1,0 +1,29 @@
+<p>Parent component Receive data from child</p>
+@if(Employess.length>0){
+<table>
+    <thead> 
+        <tr>
+            <th>S.No</th>
+            <th>Emplpyee Name</th>
+            <th>Age</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of Employess; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Address}}</td>
+                <td>{{item.age}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+@else {
+    <p> No Data found</p>
+}
+
+
+<app-ctpfrom (EmployeesAdded)="employeeupdated($event)"></app-ctpfrom>
